@@ -1,11 +1,86 @@
-let petiteFleur = anime({
-    targets: '.truc3',
+// let original =anime({
+//     targets:".bgmtg",
+//     fill:"#B4D1CE",
+//     easing: 'linear',   
+// })
 
-    // d: [
-    //     {value: "M91 11.2435C91 11.2435 86.6026 2.9489 82.5 3.74347C81.4677 3.94341 79.8392 3.10983 79 3.74348C77.7437 4.69212 77.5 3.74347 77.5 8.24347C77.5 12.7514 79 20.7435 79 20.7435L82.5 42.2435L85 55.2435L88 61.2435L95.5 72.7435L104 77.7435L106.5 70.7435L109 63.2435C109 63.2435 106.726 55.9685 105.5 51.2435C103.595 43.904 103.91 39.433 101.5 32.2435C98.5864 23.5497 91 11.2435 91 11.2435Z"},
-    //     {value: "M49.9589 31.5516C49.9589 31.5516 49 29.7564 43.9629 26.5969C38.9258 23.4375 37.1975 25.2183 37.1975 25.2183L35.996 29.2395L31.9911 42.6435L38.1335 77.1349L51.1261 102.712L60.5055 89.3371L55.7439 43.2178L52.7725 35.1467L49.9589 31.5516Z"}
-    // ],
-    scale: 1,
-    loop: true,
-    easing: 'linear'
-});
+// anime({
+//     targets:".ciel",
+//     easing: 'linear',
+//     complete:function renderSunRising() {
+//     let element = document.getElementById('SVGID_1_');
+
+//     element.innerHTML = `
+//     <stop  offset="0" style="stop-color:#0b0b3d"/>
+//     <stop  offset="0.5108" style="stop-color:#571948"/>
+//     <stop  offset="1" style="stop-color:#900c8e"/>
+//     `;
+// }  
+// })
+// // anime({
+// //     targets:".lac",
+// //     fill: "url(#SVGID_2_)",
+// //     easing: 'linear',   
+// // })
+
+// anime({
+//     targets:".pl5",
+//     fill:"#99C6C4",
+//     easing: 'linear',   
+// })
+
+// anime({
+//     targets:".mtgmil4",
+//     fill:"#72ACB2",
+//     easing: 'linear',   
+// })
+// anime({
+//     targets:".pl3",
+//     fill:"#547B8C",
+//     easing: 'linear',   
+// })
+// anime({
+//     targets:".p2",
+//     fill:"#48657C",
+//     easing: 'linear',   
+// })
+// anime({
+//     targets:".p2dr",
+//     fill:"#61868E",
+//     easing: 'linear',   
+// })
+// // anime({
+// //     targets:".mtglac",
+// //     fill:"url(#SVGID_25_)",
+// //     easing: 'easeInOutExpo',   
+// // })
+// anime({
+//     targets:".arbresderter",
+//     fill:"#1C2D2D",
+//     easing: 'linear',   
+// })
+// anime({
+//     targets:".terredevant",
+//     fill:"#1C2D2D",
+//     easing: 'linear',   
+// })
+// anime({
+//     targets:".arbresdevant",
+//     fill:"#0f1019",
+//     easing: 'linear',   
+// })
+
+
+
+
+
+
+// function renderSunRising() {
+//     let element = document.getElementById('SVGID_1_');
+
+//     element.innerHTML = `
+//     <stop  offset="0" style="stop-color:#0b0b3d"/>
+//     <stop  offset="0.5108" style="stop-color:#571948"/>
+//     <stop  offset="1" style="stop-color:#900c8e"/>
+//     `;
+// }
