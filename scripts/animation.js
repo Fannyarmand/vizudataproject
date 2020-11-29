@@ -1,49 +1,51 @@
-
 //function date (){
-  //var d = new Date();
+//var d = new Date();
 //  var hours = d.getHours();
-  //var minutes =d.getMinutes();
+//var minutes =d.getMinutes();
 //  var secondes =d.getSeconds();
 
 //  fullDate =hours + ":" + minutes + ":" + secondes;
 
 
 //}
-var d = new Date();
-var hours = d.getHours();
-var minutes =d.getMinutes();
-var secondes =d.getSeconds();
+const d = new Date();
+const hours = d.getHours();
+const minutes = d.getMinutes();
+const secondes = d.getSeconds();
 
-var allsecondes=hours*3600 + minutes*60 + secondes;
+const allsecondes = hours * 3600 + minutes * 60 + secondes;
 //setInterval(date, 1000);
-var startcolorR = 1;
-var startcolorV = 1;
-var startcolorB = 2;
-var endcolorR = 144;
-var endcolorV= 50;
-var endcolorB = 27;
-var secondesjour = 86400;
-var newcolor;
+const startcolorR = 1;
+const startcolorV = 1;
+const startcolorB = 2;
+const endcolorR = 144;
+const endcolorV = 50;
+const endcolorB = 27;
+const secondesjour = 86400;
+let newcolor;
 
-function changecolorR (){
-newcolorR=(allsecondes*endcolorR)/secondesjour;
-console.log(newcolorR);
+function changecolorR() {
+    newcolorR = (allsecondes * endcolorR) / secondesjour;
+    console.log(newcolorR);
 }
+
 changecolorR();
 
-function changecolorV (){
-newcolorV=(allsecondes*endcolorV)/secondesjour;
-console.log(newcolorV);
+function changecolorV() {
+    newcolorV = (allsecondes * endcolorV) / secondesjour;
+    console.log(newcolorV);
 }
+
 changecolorV();
 
-function changecolorB (){
-newcolorB=(allsecondes*endcolorB)/secondesjour;
-console.log(newcolorB);
+function changecolorB() {
+    newcolorB = (allsecondes * endcolorB) / secondesjour;
+    console.log(newcolorB);
 }
+
 changecolorB();
 
-newcolor = (changecolorR(),changecolorV(),changecolorB());
+newcolor = (changecolorR(), changecolorV(), changecolorB());
 
 console.log(newcolor);
 // let original =anime({
@@ -117,10 +119,6 @@ console.log(newcolor);
 //     fill:"#0f1019",
 //     easing: 'linear',
 // })
-
-
-
-
 
 
 // function renderSunRising() {
