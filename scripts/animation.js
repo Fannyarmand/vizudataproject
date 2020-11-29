@@ -1,53 +1,47 @@
-//function date (){
-//var d = new Date();
-//  var hours = d.getHours();
-//var minutes =d.getMinutes();
-//  var secondes =d.getSeconds();
-
-//  fullDate =hours + ":" + minutes + ":" + secondes;
-
-
-//}
 const d = new Date();
 const hours = d.getHours();
 const minutes = d.getMinutes();
 const secondes = d.getSeconds();
 
-const allsecondes = hours * 3600 + minutes * 60 + secondes;
+const allSecondes = hours * 3600 + minutes * 60 + secondes;
 //setInterval(date, 1000);
-const startcolorR = 1;
-const startcolorV = 1;
-const startcolorB = 2;
-const endcolorR = 144;
-const endcolorV = 50;
-const endcolorB = 27;
-const secondesjour = 86400;
-let newcolor;
+const startColorR = 1;
+const startColorV = 1;
+const startColorB = 2;
+const endColorR = 144;
+const endColorV = 50;
+const endColorB = 27;
+const colorDiffR = endColorR - startColorR;
+const colorDiffV = endColorV - startColorV;
+const colorDiffB = endColorB - startColorB;
+const secondesDay = 86400;
 
-function changecolorR() {
-    newcolorR = (allsecondes * endcolorR) / secondesjour;
-    console.log(newcolorR);
+function changeColorR() {
+    const newColorR = Math.round(allSecondes * colorDiffR / secondesDay);
+    return newColorR;
 }
 
-changecolorR();
-
-function changecolorV() {
-    newcolorV = (allsecondes * endcolorV) / secondesjour;
-    console.log(newcolorV);
+function changeColorV() {
+    const newColorV = Math.round(allSecondes * colorDiffV / secondesDay);
+    return newColorV;
 }
 
-changecolorV();
-
-function changecolorB() {
-    newcolorB = (allsecondes * endcolorB) / secondesjour;
-    console.log(newcolorB);
+function changeColorB() {
+    const newColorB = Math.round(allSecondes * colorDiffB / secondesDay);
+    return newColorB;
 }
 
-changecolorB();
+function rgb(r, g, b){
+    return "rgb("+r+","+g+","+b+")";
+}
 
-newcolor = (changecolorR(), changecolorV(), changecolorB());
+changeColorR();
+changeColorV();
+changeColorB();
 
-console.log(newcolor);
+let newColor = rgb(changeColorR(), changeColorV(),changeColorB());
+console.log(newColor);
+
 // let original =anime({
 //     targets:".bgmtg",
 //     fill:"#B4D1CE",
@@ -121,12 +115,4 @@ console.log(newcolor);
 // })
 
 
-// function renderSunRising() {
-//     let element = document.getElementById('SVGID_1_');
 
-//     element.innerHTML = `
-//     <stop  offset="0" style="stop-color:#0b0b3d"/>
-//     <stop  offset="0.5108" style="stop-color:#571948"/>
-//     <stop  offset="1" style="stop-color:#900c8e"/>
-//     `;
-// }
