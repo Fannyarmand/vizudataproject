@@ -1,8 +1,5 @@
+setInterval(date, 1000);
 
-const d = new Date();
-
-
-let result = setInterval(date, 1000);
 function date(){
     let d = new Date();
     let allsecondes = d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds();
@@ -16,26 +13,27 @@ function date(){
     let colorDiffV = endColorV - startColorV;
     let colorDiffB = endColorB - startColorB;
     let secondesDay = 86400;
+
     function changeColor() {
-        let newColorR = Math.round(allsecondes * colorDiffR / secondesDay);
-        let newColorV = Math.round(allsecondes * colorDiffV / secondesDay);
-        let newColorB = Math.round(allsecondes * colorDiffB / secondesDay);
+        let newColorR = (allsecondes * colorDiffR / secondesDay);
+        let newColorV = (allsecondes * colorDiffV / secondesDay);
+        let newColorB = (allsecondes * colorDiffB / secondesDay);
         console.log(rgb(newColorR,newColorV,newColorB));
         console.log(allsecondes,colorDiffR,secondesDay)
+    }
 
-    };
     function rgb(r, g, b){
         console.log("rgb("+r+","+g+","+b+")");
         return "rgb("+r+","+g+","+b+")";
-    };
-    changeColor();
+    }
 
-};
+    changeColor();
+}
 
 function changeStyle() {
      return document.getElementsByClassName("bgmtg").style.fill = "rgb(20, 50, 70)";
+}
 
-//}
 changeStyle();
 
 
