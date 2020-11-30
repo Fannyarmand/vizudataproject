@@ -5,43 +5,43 @@ const secondes = d.getSeconds();
 
 const allSecondes = hours * 3600 + minutes * 60 + secondes;
 //setInterval(date, 1000);
-const startColorR = 1;
-const startColorV = 1;
-const startColorB = 2;
-const endColorR = 144;
-const endColorV = 50;
-const endColorB = 27;
-const colorDiffR = endColorR - startColorR;
-const colorDiffV = endColorV - startColorV;
-const colorDiffB = endColorB - startColorB;
-const secondesDay = 86400;
 
-function changeColorR() {
-    const newColorR = Math.round(allSecondes * colorDiffR / secondesDay);
-    return newColorR;
-}
 
-function changeColorV() {
-    const newColorV = Math.round(allSecondes * colorDiffV / secondesDay);
-    return newColorV;
-}
 
-function changeColorB() {
-    const newColorB = Math.round(allSecondes * colorDiffB / secondesDay);
-    return newColorB;
-}
 
-function rgb(r, g, b){
-    return "rgb("+r+","+g+","+b+")";
-}
 
-changeColorR();
-changeColorV();
-changeColorB();
+let result = setInterval(date, 1000);
+function date(){
+    let d = new Date();
+    let allsecondes=d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds();
+    console.log(allsecondes);
 
-let newColor = rgb(changeColorR(), changeColorV(),changeColorB());
-console.log(newColor);
 
+    let startColorR = 1;
+    let startColorV = 1;
+    let startColorB = 2;
+    let endColorR = 144;
+    let endColorV = 50;
+    let endColorB = 27;
+    let colorDiffR = endColorR - startColorR;
+    let colorDiffV = endColorV - startColorV;
+    let colorDiffB = endColorB - startColorB;
+    let secondesDay = 86400;
+
+    function changeColor() {
+        let newColorR = (allsecondes * colorDiffR / secondesDay);
+        let newColorV = (allsecondes * colorDiffV / secondesDay);
+        let newColorB = (allsecondes * colorDiffB / secondesDay);
+        console.log(rgb(newColorR,newColorV,newColorB));
+        console.log(allsecondes,colorDiffR,secondesDay)
+        
+    };   
+    function rgb(r, g, b){
+        console.log("rgb("+r+","+g+","+b+")");
+        return "rgb("+r+","+g+","+b+")";
+    };
+    changeColor();
+};
 // let original =anime({
 //     targets:".bgmtg",
 //     fill:"#B4D1CE",
