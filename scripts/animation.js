@@ -1,46 +1,45 @@
+
 const d = new Date();
-const hours = d.getHours();
-const minutes = d.getMinutes();
-const secondes = d.getSeconds();
 
-const allSecondes = hours * 3600 + minutes * 60 + secondes;
-//setInterval(date, 1000);
-const startColorR = 1;
-const startColorV = 1;
-const startColorB = 2;
-const endColorR = 144;
-const endColorV = 50;
-const endColorB = 27;
-const colorDiffR = endColorR - startColorR;
-const colorDiffV = endColorV - startColorV;
-const colorDiffB = endColorB - startColorB;
-const secondesDay = 86400;
 
-function changeColorR() {
-    const newColorR = Math.round(allSecondes * colorDiffR / secondesDay);
-    return newColorR;
-}
+let result = setInterval(date, 1000);
+function date(){
+    let d = new Date();
+    let allsecondes = d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds();
+    let startColorR = 1;
+    let startColorV = 1;
+    let startColorB = 2;
+    let endColorR = 144;
+    let endColorV = 50;
+    let endColorB = 27;
+    let colorDiffR = endColorR - startColorR;
+    let colorDiffV = endColorV - startColorV;
+    let colorDiffB = endColorB - startColorB;
+    let secondesDay = 86400;
+    function changeColor() {
+        let newColorR = Math.round(allsecondes * colorDiffR / secondesDay);
+        let newColorV = Math.round(allsecondes * colorDiffV / secondesDay);
+        let newColorB = Math.round(allsecondes * colorDiffB / secondesDay);
+        console.log(rgb(newColorR,newColorV,newColorB));
+        console.log(allsecondes,colorDiffR,secondesDay)
 
-function changeColorV() {
-    const newColorV = Math.round(allSecondes * colorDiffV / secondesDay);
-    return newColorV;
-}
+    };
+    function rgb(r, g, b){
+        console.log("rgb("+r+","+g+","+b+")");
+        return "rgb("+r+","+g+","+b+")";
+    };
+    changeColor();
 
-function changeColorB() {
-    const newColorB = Math.round(allSecondes * colorDiffB / secondesDay);
-    return newColorB;
-}
+};
 
-function rgb(r, g, b){
-    return "rgb("+r+","+g+","+b+")";
-}
+function changeStyle() {
+     return document.getElementsByClassName("bgmtg").style.fill = "rgb(20, 50, 70)";
 
-changeColorR();
-changeColorV();
-changeColorB();
+//}
+changeStyle();
 
-let newColor = rgb(changeColorR(), changeColorV(),changeColorB());
-console.log(newColor);
+
+
 
 // let original =anime({
 //     targets:".bgmtg",
