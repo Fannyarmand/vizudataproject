@@ -30,11 +30,23 @@ function date(){
     changeColor();
 }
 
-function changeStyle() {
-     return document.getElementsByClassName("bgmtg").style.fill = "rgb(20, 50, 70)";
-}
+function removeStyle() {
+    document.getElementsByClassName('bgmtg')[0].removeAttribute("style");
+    //.setAttribute("style", "fill:rgb(2, 45, 78);";
 
+}
+function changeStyle() {
+    document.getElementsByClassName('bgmtg')[0].setAttribute("style", "fill:rgb(2, 45, 78);");
+
+}
+//function changeStyle() {
+//    let element = document.getElementsByClassName('bgmtg');
+//    element.setAttribute("style", "fill:rgb(2, 45, 78);";
+//}
+
+removeStyle();
 changeStyle();
+
 
 
 
