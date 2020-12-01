@@ -4,11 +4,11 @@ function date(){
     let d = new Date();
     let allsecondes = d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds();
 
-    changeColor(allsecondes);
+    let newColor = changeColor(allsecondes);
+    changeStyleElement(newColor);
 }
 
 function rgb(r, g, b){
-    console.log("rgb("+r+","+g+","+b+")");
     return "rgb("+r+","+g+","+b+")";
 }
 
@@ -22,32 +22,25 @@ function changeColor(allsecondes) {
     let colorDiffR = endColorR - startColorR;
     let colorDiffV = endColorV - startColorV;
     let colorDiffB = endColorB - startColorB;
-    let secondesDay = 86400;
+    let secondesDay = 86400/2000;
 
-    let newColorR = (allsecondes * colorDiffR / secondesDay);
-    let newColorV = (allsecondes * colorDiffV / secondesDay);
-    let newColorB = (allsecondes * colorDiffB / secondesDay);
-    console.log(rgb(newColorR,newColorV,newColorB));
-    console.log(allsecondes,colorDiffR,secondesDay)
-}
-//function arrayOfClass() {
- //   return document.getElementsByClassName('bgmtg');
+    let newColorR = Math.round(allsecondes * colorDiffR / secondesDay)%255;
+    let newColorV = Math.round(allsecondes * colorDiffV / secondesDay)%255;
+    let newColorB = Math.round(allsecondes * colorDiffB / secondesDay)%255;
+    return rgb(newColorR,newColorV,newColorB);
 
-//}
-function removeStyle(el) {
-     el.removeAttribute("style");
 }
 
-function changeStyle() {
-    el.setAttribute("style", "fill:rgb(2, 45, 78);");
+function changeStyleElement(newColor) {
+    console.log(newColor);
+    let newArray = document.getElementsByClassName('bgmtg');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
 }
-
-const el = document.getElementsByClassName('bgmtg')[0];
-
-removeStyle(el);
-changeStyle(el);
-//arrayOfClass();
-
 
 
 
