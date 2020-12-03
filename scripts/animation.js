@@ -1,39 +1,45 @@
 setInterval(date, 1000);
 
 function date(){
-    let d = new Date();
-    let allsecondes = d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds();
+    const d = new Date();
+    const allsecondes = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
 
-    let newColor = changeColor(allsecondes);
-    changeStyleElement(newColor);
+    const newColor = changeColor(allsecondes);
+    changeStyleElementBackgroundMountain('black');
+    changeStyleElementPlan5(newColor);
+    changeStyleElementCenterMountain(newColor);
+    changeStyleElementPlan3(newColor);
+    changeStyleElementMountainRight(newColor);
+    changeStyleElementMountainNearLac(newColor);
 }
 
 function rgb(r, g, b){
     return "rgb("+r+","+g+","+b+")";
 }
 
-function changeColor(allsecondes) {
-    let startColorR = 1;
-    let startColorV = 1;
-    let startColorB = 2;
-    let endColorR = 144;
-    let endColorV = 50;
-    let endColorB = 27;
-    let colorDiffR = endColorR - startColorR;
-    let colorDiffV = endColorV - startColorV;
-    let colorDiffB = endColorB - startColorB;
-    let secondesDay = 86400/2000;
 
-    let newColorR = Math.round(allsecondes * colorDiffR / secondesDay)%255;
-    let newColorV = Math.round(allsecondes * colorDiffV / secondesDay)%255;
-    let newColorB = Math.round(allsecondes * colorDiffB / secondesDay)%255;
+function changeColor(allsecondes) {
+    const startColorR = 1;
+    const startColorV = 1;
+    const startColorB = 2;
+    const endColorR = 144;
+    const endColorV = 50;
+    const endColorB = 27;
+    const colorDiffR = endColorR - startColorR;
+    const colorDiffV = endColorV - startColorV;
+    const colorDiffB = endColorB - startColorB;
+    const secondesDay = 86400 / 2000;
+
+    const newColorR = Math.round(allsecondes * colorDiffR / secondesDay) % 256;
+    const newColorV = Math.round(allsecondes * colorDiffV / secondesDay) % 256;
+    const newColorB = Math.round(allsecondes * colorDiffB / secondesDay) % 256;
     return rgb(newColorR,newColorV,newColorB);
 
 }
 
-function changeStyleElement(newColor) {
+function changeStyleElementBackgroundMountain(newColor) {
     console.log(newColor);
-    let newArray = document.getElementsByClassName('bgmtg');
+    const newArray = document.getElementsByClassName('bgmtg');
     console.log(newArray);
     for (i = 0; i < newArray.length; i++) {
         newArray[i].removeAttribute("style");
@@ -42,6 +48,60 @@ function changeStyleElement(newColor) {
 
 }
 
+function changeStyleElementPlan5(newColor) {
+    console.log(newColor);
+    const newArray = document.getElementsByClassName('pl5');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
+}
+
+function changeStyleElementCenterMountain(newColor) {
+    console.log(newColor);
+    const newArray = document.getElementsByClassName('mtgmil4');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
+}
+
+function changeStyleElementPlan3(newColor) {
+    console.log(newColor);
+    const newArray = document.getElementsByClassName('pl3');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
+}
+
+function changeStyleElementMountainRight(newColor) {
+    console.log(newColor);
+    const newArray = document.getElementsByClassName('p2');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
+}
+
+function changeStyleElementMountainNearLac(newColor) {
+    console.log(newColor);
+    const newArray = document.getElementsByClassName('p2dr');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
+        newArray[i].removeAttribute("style");
+        newArray[i].setAttribute("style","fill:" + newColor + ";");
+    }
+
+}
 
 
 // let original =anime({
