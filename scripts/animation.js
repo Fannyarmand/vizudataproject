@@ -5,16 +5,76 @@ function date(){
     const allsecondes = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
 
     const newColor = changeColor(allsecondes);
+    const newColor1 = changeColor2(allsecondes);
+    const newColor2 = changeColor3(allsecondes);
+    const newColor3 = changeColor4(allsecondes);
     changeStyleElementBackgroundMountain('black');
-    changeStyleElementPlan5(newColor);
-    changeStyleElementCenterMountain(newColor);
-    changeStyleElementPlan3(newColor);
+    changeStyleElementPlan5(newColor1);
+    changeStyleElementCenterMountain(newColor2);
+    changeStyleElementPlan3(newColor3);
     changeStyleElementMountainRight(newColor);
     changeStyleElementMountainNearLac(newColor);
 }
 
 function rgb(r, g, b){
     return "rgb("+r+","+g+","+b+")";
+}
+
+function changeColor4(allsecondes) {
+    const startColorR = 1;
+    const startColorV = 1;
+    const startColorB = 2;
+    const endColorR = 255;
+    const endColorV = 1;
+    const endColorB = 255;
+    const colorDiffR = endColorR - startColorR;
+    const colorDiffV = endColorV - startColorV;
+    const colorDiffB = endColorB - startColorB;
+    const secondesDay = 86400 / 2000;
+
+    const newColorR = Math.round(allsecondes * colorDiffR / secondesDay) % 256;
+    const newColorV = Math.round(allsecondes * colorDiffV / secondesDay) % 256;
+    const newColorB = Math.round(allsecondes * colorDiffB / secondesDay) % 256;
+    return rgb(newColorR,newColorV,newColorB);
+
+}
+
+function changeColor3(allsecondes) {
+    const startColorR = 1;
+    const startColorV = 1;
+    const startColorB = 2;
+    const endColorR = 32;
+    const endColorV = 175;
+    const endColorB = 113;
+    const colorDiffR = endColorR - startColorR;
+    const colorDiffV = endColorV - startColorV;
+    const colorDiffB = endColorB - startColorB;
+    const secondesDay = 86400 / 2000;
+
+    const newColorR = Math.round(allsecondes * colorDiffR / secondesDay) % 256;
+    const newColorV = Math.round(allsecondes * colorDiffV / secondesDay) % 256;
+    const newColorB = Math.round(allsecondes * colorDiffB / secondesDay) % 256;
+    return rgb(newColorR,newColorV,newColorB);
+
+}
+
+function changeColor2(allsecondes) {
+    const startColorR = 1;
+    const startColorV = 1;
+    const startColorB = 2;
+    const endColorR = 122;
+    const endColorV = 86;
+    const endColorB = 200;
+    const colorDiffR = endColorR - startColorR;
+    const colorDiffV = endColorV - startColorV;
+    const colorDiffB = endColorB - startColorB;
+    const secondesDay = 86400 / 2000;
+
+    const newColorR = Math.round(allsecondes * colorDiffR / secondesDay) % 256;
+    const newColorV = Math.round(allsecondes * colorDiffV / secondesDay) % 256;
+    const newColorB = Math.round(allsecondes * colorDiffB / secondesDay) % 256;
+    return rgb(newColorR,newColorV,newColorB);
+
 }
 
 
@@ -175,6 +235,3 @@ function changeStyleElementMountainNearLac(newColor) {
 //     fill:"#0f1019",
 //     easing: 'linear',
 // })
-
-
-
